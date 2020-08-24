@@ -1,0 +1,123 @@
+---
+sudo: required
+dist: bionic
+notifications:
+  slack:
+    on_failure: always
+matrix:
+  fast_finish: true
+  include:
+
+    - name: "fedora 32 (bento) provision bash Python 3.7 on bionic amd64"
+      dist: bionic
+      arch: amd64
+      language: python
+      python: 3.7
+      before_install:
+        - pip3 install virtualenv
+        - virtualenv -p $(which python3) ~venvpy3
+        - source ~venvpy3/bin/activate
+        - pip install -r requirements.txt
+      script:
+        - sudo make deploy-vagrant
+        - sudo make deploy-libvirt
+        - sudo make deploy-fedora-bento
+      after_success:
+        - deactivate
+        - sudo vagrant destroy -f # required to run Vagrantfile template        
+        - sudo rm Vagrantfile # required to run Vagrantfile template
+            
+    # - name: "debian 9 stretch(bento) provision bash Python 3.7 on bionic amd64"
+    #   dist: bionic
+    #   arch: amd64
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #   script:
+    #     - sudo make deploy-vagrant
+    #     - sudo make deploy-libvirt
+    #     - sudo make deploy-debian-bento-stretch
+    #   after_success:
+    #     - deactivate
+    #     - sudo vagrant destroy -f # required to run Vagrantfile template        
+    #     - sudo rm Vagrantfile # required to run Vagrantfile template     
+
+    # - name: "debian 10 buster(bento) provision bash Python 3.7 on bionic amd64"
+    #   dist: bionic
+    #   arch: amd64
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #   script:
+    #     - sudo make deploy-vagrant
+    #     - sudo make deploy-libvirt
+    #     - sudo make deploy-debian-bento-buster
+    #   after_success:
+    #     - deactivate
+    #     - sudo vagrant destroy -f # required to run Vagrantfile template        
+    #     - sudo rm Vagrantfile # required to run Vagrantfile template 
+
+    # - name: "debian 10 buster provision bash Python 3.7 on bionic amd64"
+    #   dist: bionic
+    #   arch: amd64
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #   script:
+    #     - sudo make deploy-vagrant
+    #     - sudo make deploy-libvirt
+    #     - sudo make deploy-debian-buster
+    #   after_success:
+    #     - deactivate
+    #     - sudo vagrant destroy -f # required to run Vagrantfile template        
+    #     - sudo rm Vagrantfile # required to run Vagrantfile template 
+
+    # - name: "debian 9 stretch provision bash Python 3.7 on bionic amd64" 
+    #   dist: bionic
+    #   arch: amd64
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #   script:
+    #     - sudo make deploy-vagrant
+    #     - sudo make deploy-libvirt
+    #     - sudo make deploy-debian-stretch
+    #   after_success:
+    #     - deactivate
+    #     - sudo vagrant destroy -f # required to run Vagrantfile template        
+    #     - sudo rm Vagrantfile # required to run Vagrantfile template 
+
+    # - name: "debian 8 jessie provision bash Python 3.7 on bionic amd64" 
+    #   dist: bionic
+    #   arch: amd64
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #   script:
+    #     - sudo make deploy-vagrant
+    #     - sudo make deploy-libvirt
+    #     - sudo make deploy-debian-jessie
+    #   after_success:
+    #     - deactivate
+    #     - sudo vagrant destroy -f # required to run Vagrantfile template        
+    #     - sudo rm Vagrantfile # required to run Vagrantfile template        
