@@ -14,7 +14,7 @@ vagrant box add "bento/fedora-32" --provider=virtualbox
 vagrant mutate "bento/fedora-32" libvirt
 vagrant init --template Vagrantfile.provision.bash.erb
 # must be created in project root directory with Vagrantfile template file
-vagrant up --provider=libvirt "vg-debian-01"
+vagrant up --provider=libvirt "vg-fedora-01"
 
 
 # TESTED OK
