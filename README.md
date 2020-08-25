@@ -1,7 +1,7 @@
 # fedora-sandbox
 
 Travis (.com) branch:
-[![Build Status](https://travis-ci.com/githubfoam/fedora-sandbox.svg?branch=dev)](https://travis-ci.com/githubfoam/fedora-sandbox)  
+[![Build Status](https://travis-ci.com/githubfoam/fedora-sandbox.svg?branch=test)](https://travis-ci.com/githubfoam/fedora-sandbox)  
 
 ~~~~
 >vagrant init --template Vagrantfile.provision.bash.erb

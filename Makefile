@@ -2,9 +2,6 @@
 deploy-fedora:
 	bash scripts/deploy-fedora.sh
 
-deploy-fedora-bento:
-	bash scripts/deploy-fedora-bento.sh
-
 deploy-libvirt:
 	bash scripts/deploy-libvirt.sh
 
