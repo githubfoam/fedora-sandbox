@@ -10,12 +10,18 @@ vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required w
 vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
 
 #https://github.com/chef/bento/tree/master/packer_templates/fedora
-vagrant box add "bento/fedora-32" --provider=virtualbox
-vagrant mutate "bento/fedora-32" libvirt
+# vagrant box add "bento/fedora-32" --provider=virtualbox
+# vagrant mutate "bento/fedora-32" libvirt
+# vagrant init --template Vagrantfile.provision.bash.erb
+# # must be created in project root directory with Vagrantfile template file
+# vagrant up --provider=libvirt "vg-fedora-01"
+
+#https://github.com/chef/bento/tree/master/packer_templates/fedora
+vagrant box add "bento/fedora-31" --provider=virtualbox
+vagrant mutate "bento/fedora-31" libvirt
 vagrant init --template Vagrantfile.provision.bash.erb
 # must be created in project root directory with Vagrantfile template file
 vagrant up --provider=libvirt "vg-fedora-01"
-
 
 # TESTED OK
 # https://github.com/chef/bento/tree/master/packer_templates/centos
