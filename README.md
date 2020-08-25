@@ -6,10 +6,10 @@ Travis (.com) branch:
 ~~~~
 >vagrant init --template Vagrantfile.provision.bash.erb
 >dir
->vagrant up "vg-fedora-01"
+>vagrant up "vg-fedora-02"
 
 
->vagrant destroy -f "vg-fedora-01"
+>vagrant destroy -f "vg-fedora-02"
 
 >vagrant global-status
 
