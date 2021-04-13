@@ -27,7 +27,7 @@ matrix:
     #     - sudo vagrant destroy -f # required to run Vagrantfile template        
     #     - sudo rm Vagrantfile # required to run Vagrantfile template
             
-    - name: "fedora 31 (bento) provision bash Python 3.7 on bionic amd64"
+    - name: "fedora 33 (bento) provision bash Python 3.7 on bionic amd64"
       dist: bionic
       arch: amd64
       language: python

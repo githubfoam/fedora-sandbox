@@ -17,8 +17,8 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 # vagrant up --provider=libvirt "vg-fedora-01"
 
 #https://github.com/chef/bento/tree/master/packer_templates/fedora
-vagrant box add "bento/fedora-31" --provider=virtualbox
-vagrant mutate "bento/fedora-31" libvirt
+vagrant box add "bento/fedora-33" --provider=virtualbox
+vagrant mutate "bento/fedora-33" libvirt
 vagrant init --template Vagrantfile.provision.bash.erb
 # must be created in project root directory with Vagrantfile template file
 vagrant up --provider=libvirt "vg-fedora-03"
