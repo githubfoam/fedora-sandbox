@@ -16,3 +16,9 @@ Travis (.com) branch:
 >del Vagrantfile
 >dir
 ~~~~
+
+~~~~
+https://app.vagrantup.com/fedora
+
+https://github.com/chef/bento/tree/master/packer_templates/fedora
+~~~~

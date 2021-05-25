@@ -10,7 +10,9 @@ vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required w
 vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
 
 # https://app.vagrantup.com/fedora/boxes/32-cloud-base
-vagrant box add "fedora/32-cloud-base" --provider=libvirt
+# vagrant box add "fedora/32-cloud-base" --provider=libvirt
+# vagrant box add "fedora/33-cloud-base" --provider=libvirt
+vagrant box add "fedora/34-cloud-base" --provider=libvirt
 vagrant init --template Vagrantfile.provision.bash.erb
 # must be created in project root directory with Vagrantfile template file
 vagrant up --provider=libvirt "vg-fedora-02"
