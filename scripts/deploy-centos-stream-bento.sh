@@ -11,7 +11,7 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 
 # https://app.vagrantup.com/bento/boxes/centos-8.3
 
-
+# The box you're attempting to add doesn't support the provider
 vagrant box add  "bento/centos-stream-8" --provider=virtualbox
 vagrant mutate "bento/centos-stream-8"  libvirt
 
