@@ -1,4 +1,7 @@
 
+deploy-fedora-bento:
+	bash scripts/deploy-fedora-bento.sh
+
 deploy-fedora:
 	bash scripts/deploy-fedora.sh
 
