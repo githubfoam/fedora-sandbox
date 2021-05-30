@@ -8,7 +8,7 @@ matrix:
   fast_finish: true
   include:
 
-    - name: "fedora 32 cloud-base provision bash Python 3.7 on bionic amd64"
+    - name: "fedora 34 cloud-base provision bash Python 3.7 on bionic amd64"
       dist: bionic
       arch: amd64
       language: python
